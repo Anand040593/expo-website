@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biz Expo Forum - Shopping and Business Event 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="glass-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="assets/logo.png" alt="Biz Expo Forum Logo" class="logo">
+                <div class="header-text">
+                    <h1>Biz Expo Forum</h1>
+                    <p class="subtitle">Shopping and Business</p>
+                </div>
+            </div>
+            <div class="event-date">
+                <span class="icon">📅</span>
+                <strong>September 18, 19, 20, 2026</strong>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-image-wrapper">
+                <img src="assets/flyer_main.png" alt="Expo Flyer" class="hero-image">
+            </div>
+            <div class="hero-text">
+                <h2>Grow Your Business, Showcase Your Brand</h2>
+                <p>Join the biggest business event in Salem. Network, connect, and grow.</p>
+                <a href="#booking" class="primary-btn">Book Your Stall Now</a>
+            </div>
+        </section>
+
+        <section class="why-choose-us section-padding">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🏢</div>
+                        <h3>150+ Premium Business Stalls</h3>
+                        <p>Explore products and services from top brands and emerging businesses under one roof.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Excellent Business Networking</h3>
+                        <p>Build valuable partnerships with entrepreneurs, distributors, dealers, and industry professionals.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3>High Lead Generation</h3>
+                        <p>Generate direct sales, collect quality leads, and expand your customer base.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📍</div>
+                        <h3>Prime City Location</h3>
+                        <p>Conveniently located for maximum visitor footfall and easy accessibility.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="booking" class="booking-section section-padding">
+            <div class="container">
+                <h2 class="section-title">Stall Details & Booking Pricing</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Basics</h3>
+                            <p class="ideal-for">Startups & Home Creators</p>
+                        </div>
+                        <ul class="features-list">
+                            <li>Standard counter space</li>
+                            <li>Basic lighting</li>
+                            <li>Single power outlet</li>
+                        </ul>
+                        <button class="payment-btn" onclick="initiatePayment('Basics Package', 5000)">Proceed to Payment</button>
+                    </div>
+                    
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Standard</h3>
+                            <p class="ideal-for">Small & Medium Enterprises (SMEs)</p>
+                        </div>
+                        <ul class="features-list">
+                            <li>Shell scheme setup</li>
+                            <li>Name board</li>
+                            <li>Networking directory inclusion</li>
+                            <li>Dual power outlets</li>
+                        </ul>
+                        <button class="payment-btn" onclick="initiatePayment('Standard Package', 15000)">Proceed to Payment</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Premium</h3>
+                            <p class="ideal-for">Established Brands</p>
+                        </div>
+                        <ul class="features-list">
+                            <li>Prime location placement</li>
+                            <li>Expanded floor area</li>
+                            <li>Advanced branding promotion</li>
+                            <li>VIP amenities</li>
+                        </ul>
+                        <button class="payment-btn" onclick="initiatePayment('Premium Package', 30000)">Proceed to Payment</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="events-section section-padding">
+            <div class="container">
+                <h2 class="section-title">Featured Attractions & Activities</h2>
+                <div class="events-layout">
+                    <div class="events-list">
+                        <div class="event-item">
+                            <div class="event-info">
+                                <h3>♟️ Chess Tournament</h3>
+                                <p>Requires entry fee registration</p>
+                            </div>
+                            <button class="payment-btn small" onclick="initiatePayment('Chess Tournament Entry', 500)">Pay Entry Fee</button>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-info">
+                                <h3>🐕 Mega Dog Show</h3>
+                                <p>Free general entry / Viewer access</p>
+                            </div>
+                            <span class="status-badge free">Free Entry</span>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-info">
+                                <h3>🎨 Drawing Competition</h3>
+                                <p>Requires entry fee registration</p>
+                            </div>
+                            <button class="payment-btn small" onclick="initiatePayment('Drawing Competition Entry', 300)">Pay Entry Fee</button>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-info">
+                                <h3>👗 Grand Fashion Show & Live Concerts</h3>
+                                <p>Free general public admission</p>
+                            </div>
+                            <span class="status-badge free">Free Admission</span>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-info">
+                                <h3>🎠 Amusement Rides (Camel, Horse, Bikes)</h3>
+                                <p>Pay per ride tickets</p>
+                            </div>
+                            <button class="payment-btn small" onclick="initiatePayment('Amusement Ride Tokens', 100)">Purchase Tokens</button>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-info">
+                                <h3>💃 Zumba Fitness & Dance Programs</h3>
+                                <p>Open participation</p>
+                            </div>
+                            <span class="status-badge free">Open</span>
+                        </div>
+                    </div>
+                    <div class="events-flyer">
+                        <img src="assets/events_main.png" alt="Events Flyer" class="event-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p class="hotlines">📞 Hotlines: <strong>+91-7200242228</strong> / <strong>+91-7200542228</strong></p>
+                </div>
+                <div class="address-info">
+                    <h3>Location</h3>
+                    <p>📍 Sree Varalakshmi Mahaal, Near Thiruvagoundanur Byepass,</p>
+                    <p>Meyyanur, Salem - 636005.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Biz Expo Forum. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="payment-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Secure Payment</h3>
+                <button class="close-modal" onclick="closePaymentModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-item-name" class="modal-item">Item Name</p>
+                <h2 id="modal-amount" class="modal-price">₹0</h2>
+                
+                <div class="card-details">
+                    <input type="text" placeholder="Card Number (Mock)" class="mock-input" disabled value="**** **** **** 4242">
+                    <div class="card-extra">
+                        <input type="text" placeholder="MM/YY" class="mock-input" disabled value="12/26">
+                        <input type="text" placeholder="CVV" class="mock-input" disabled value="***">
+                    </div>
+                </div>
+                
+                <button class="pay-confirm-btn" onclick="processMockPayment()">Pay Now</button>
+            </div>
+            <div id="payment-success" class="payment-success-msg hidden">
+                <div class="success-icon">✓</div>
+                <h3>Payment Successful!</h3>
+                <p>Your booking has been confirmed.</p>
+                <button class="pay-confirm-btn" onclick="closePaymentModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
