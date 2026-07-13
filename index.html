@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biz Expo - Shopping and Business Event 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
     <header class="glass-header">
@@ -231,6 +231,7 @@
                 <h2 id="modal-amount" class="modal-price">₹0</h2>
                 
                 
+                    <div id="step-1-info" style="display: block;">
                     <div style="margin-bottom: 15px;">
                         <input type="text" id="reg-name" placeholder="Full Name" class="mock-input" required style="margin-bottom: 10px;">
                         <input type="email" id="reg-email" placeholder="Email Address" class="mock-input" required style="margin-bottom: 10px;">
@@ -240,15 +241,22 @@
                           <textarea id="reg-company-desc" placeholder="Company Description / Products (Required for Stalls)" class="mock-input stall-only" style="display: none; margin-bottom: 10px; resize: vertical; min-height: 60px;"></textarea>
 
                     </div>
-                    <div class="card-details">
-                    <input type="text" placeholder="Card Number (Mock)" class="mock-input" disabled value="**** **** **** 4242">
-                    <div class="card-extra">
-                        <input type="text" placeholder="MM/YY" class="mock-input" disabled value="12/26">
-                        <input type="text" placeholder="CVV" class="mock-input" disabled value="***">
-                    </div>
+                    <button class="pay-confirm-btn" onclick="goToPaymentStep()">Next: Payment Details</button>
                 </div>
                 
-                <button class="pay-confirm-btn" onclick="processMockPayment()">Pay Now</button>
+                <div id="step-2-payment" style="display: none;">
+                    <div class="card-details">
+                        <input type="text" placeholder="Card Number (Mock)" class="mock-input" disabled value="**** **** **** 4242">
+                        <div class="card-extra">
+                            <input type="text" placeholder="MM/YY" class="mock-input" disabled value="12/26">
+                            <input type="text" placeholder="CVV" class="mock-input" disabled value="***">
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="pay-confirm-btn" onclick="goBackToInfoStep()" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">Back</button>
+                        <button class="pay-confirm-btn" onclick="processMockPayment()">Pay Now</button>
+                    </div>
+                </div>
             </div>
             <div id="payment-success" class="payment-success-msg hidden">
                 <div class="success-icon">✓</div>
@@ -259,6 +267,6 @@
         </div>
     </div>
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=8"></script>
 </body>
 </html>

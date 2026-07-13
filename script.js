@@ -47,11 +47,15 @@ function initiatePayment(itemName, amount, isStall = false) {
     isCurrentStall = isStall;
     
     // Populate modal data
-    modalItemName.textContent = "Payment for " + itemName;
+    modalItemName.textContent = "Booking: " + itemName;
     modalAmount.textContent = "₹" + amount.toLocaleString('en-IN');
     
     // Reset success state
     paymentSuccess.classList.add('hidden');
+    
+    // Reset steps
+    document.getElementById('step-1-info').style.display = 'block';
+    document.getElementById('step-2-payment').style.display = 'none';
     
     // Clear standard inputs
     const inputs = ['reg-name', 'reg-email', 'reg-phone', 'reg-address', 'reg-company', 'reg-company-desc'];
@@ -81,17 +85,16 @@ function closePaymentModal() {
     modalOverlay.classList.remove('active');
 }
 
-async function processMockPayment() {
+function goToPaymentStep() {
     const name = document.getElementById('reg-name')?.value;
     const email = document.getElementById('reg-email')?.value;
     const phone = document.getElementById('reg-phone')?.value;
     const address = document.getElementById('reg-address')?.value;
-    
-    const companyName = document.getElementById('reg-company')?.value || "";
-    const companyDesc = document.getElementById('reg-company-desc')?.value || "";
+    const companyName = document.getElementById('reg-company')?.value;
+    const companyDesc = document.getElementById('reg-company-desc')?.value;
     
     if(!name || !email || !phone || !address) {
-        alert("Please fill in all standard registration details!");
+        alert("Please fill in all standard registration details before proceeding!");
         return;
     }
     
@@ -99,6 +102,24 @@ async function processMockPayment() {
         alert("Please fill in the Company details required for stall booking!");
         return;
     }
+    
+    // Proceed to Step 2
+    document.getElementById('step-1-info').style.display = 'none';
+    document.getElementById('step-2-payment').style.display = 'block';
+}
+
+function goBackToInfoStep() {
+    document.getElementById('step-1-info').style.display = 'block';
+    document.getElementById('step-2-payment').style.display = 'none';
+}
+
+async function processMockPayment() {
+    const name = document.getElementById('reg-name')?.value;
+    const email = document.getElementById('reg-email')?.value;
+    const phone = document.getElementById('reg-phone')?.value;
+    const address = document.getElementById('reg-address')?.value;
+    const companyName = document.getElementById('reg-company')?.value || "";
+    const companyDesc = document.getElementById('reg-company-desc')?.value || "";
     
     const payload = {
         name: name,
@@ -127,7 +148,7 @@ async function processMockPayment() {
             alert("Error saving registration details to database.");
         }
     } catch (err) {
-        alert("Failed to connect to the backend server. Please make sure server.py is running!");
+        alert("Failed to connect to the backend server.");
     }
 }
 

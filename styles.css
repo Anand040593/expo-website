@@ -183,12 +183,19 @@ body::after {
     min-height: 85vh;
 }
 
+@keyframes float-wrapper {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
 .hero-image-wrapper {
     flex: 1.2;
     display: flex;
     justify-content: center;
     position: relative;
     perspective: 1000px;
+    animation: float-wrapper 5s ease-in-out infinite;
 }
 
 .hero-image-wrapper::before {
@@ -732,6 +739,7 @@ body::after {
     transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+
 .modal-overlay.active {
     opacity: 1;
     visibility: visible;
@@ -748,10 +756,27 @@ body::after {
     transform: translateY(40px) scale(0.95);
     transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
     box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 30px rgba(255, 107, 0, 0.1);
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .modal-overlay.active .modal-content {
     transform: translateY(0) scale(1);
+}
+
+/* Custom Scrollbar for Modal to match theme */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+.modal-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 10px;
+}
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
 }
 
 .modal-header {
