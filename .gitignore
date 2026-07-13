@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+expo.db
+*.log
+update_*.py
+swap_*.py
+cache_bust.py
+add_location.py
+generate_events.py

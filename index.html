@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biz Expo Forum - Shopping and Business Event 2026</title>
+    <title>Biz Expo - Shopping and Business Event 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
     <header class="glass-header">
         <div class="header-content">
             <div class="logo-section">
-                <img src="assets/logo.png" alt="Biz Expo Forum Logo" class="logo">
+                <img src="assets/logo.png" alt="Biz Expo Logo" class="logo">
                 <div class="header-text">
-                    <h1>Biz Expo Forum</h1>
+                    <h1>Biz Expo</h1>
                     <p class="subtitle">Shopping and Business</p>
                 </div>
             </div>
-            <div class="event-date">
-                <span class="icon">📅</span>
-                <strong>September 18, 19, 20, 2026</strong>
+                        <div class="header-right" style="text-align: right; display: flex; flex-direction: column; gap: 5px;">
+                <div class="event-location" style="font-weight: 600; font-size: 1.1rem; color: #fff;">
+                    <span style="color: var(--primary);">📍</span> Sree Varalakshmi Mahal, Salem
+                </div>
+                <div class="event-date" style="font-size: 1rem; color: var(--text-muted);">
+                    <span>📅</span> September 18, 19, 20, 2026
+                </div>
             </div>
         </div>
     </header>
@@ -32,7 +36,10 @@
             <div class="hero-text">
                 <h2>Grow Your Business, Showcase Your Brand</h2>
                 <p>Join the biggest business event in Salem. Network, connect, and grow.</p>
-                <a href="#booking" class="primary-btn">Book Your Stall Now</a>
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                      <a href="#booking" class="primary-btn">Book Your Stall Now</a>
+                      <a href="#events" class="primary-btn" style="background: linear-gradient(135deg, var(--secondary), var(--accent)); border-color: rgba(217, 70, 239, 0.3); box-shadow: 0 10px 30px var(--secondary-glow);">Register an Event</a>
+                  </div>
             </div>
         </section>
 
@@ -78,25 +85,11 @@
                             <li>Basic lighting</li>
                             <li>Single power outlet</li>
                         </ul>
-                        <button class="payment-btn" onclick="initiatePayment('Basics Package', 5000)">Proceed to Payment</button>
+                        <button class="payment-btn" onclick="initiatePayment('Basics Package', 5000, true)">Proceed to Payment</button>
                     </div>
                     
                     <div class="pricing-card popular">
                         <div class="popular-badge">Most Popular</div>
-                        <div class="pricing-header">
-                            <h3>Standard</h3>
-                            <p class="ideal-for">Small & Medium Enterprises (SMEs)</p>
-                        </div>
-                        <ul class="features-list">
-                            <li>Shell scheme setup</li>
-                            <li>Name board</li>
-                            <li>Networking directory inclusion</li>
-                            <li>Dual power outlets</li>
-                        </ul>
-                        <button class="payment-btn" onclick="initiatePayment('Standard Package', 15000)">Proceed to Payment</button>
-                    </div>
-
-                    <div class="pricing-card">
                         <div class="pricing-header">
                             <h3>Premium</h3>
                             <p class="ideal-for">Established Brands</p>
@@ -107,62 +100,101 @@
                             <li>Advanced branding promotion</li>
                             <li>VIP amenities</li>
                         </ul>
-                        <button class="payment-btn" onclick="initiatePayment('Premium Package', 30000)">Proceed to Payment</button>
+                        <button class="payment-btn" onclick="initiatePayment('Premium Package', 30000, true)">Proceed to Payment</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Standard</h3>
+                            <p class="ideal-for">Small & Medium Enterprises (SMEs)</p>
+                        </div>
+                        <ul class="features-list">
+                            <li>Shell scheme setup</li>
+                            <li>Name board</li>
+                            <li>Networking directory inclusion</li>
+                            <li>Dual power outlets</li>
+                        </ul>
+                        <button class="payment-btn" onclick="initiatePayment('Standard Package', 15000, true)">Proceed to Payment</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="events-section section-padding">
+        <section id="events" class="events-section section-padding">
             <div class="container">
                 <h2 class="section-title">Featured Attractions & Activities</h2>
-                <div class="events-layout">
-                    <div class="events-list">
-                        <div class="event-item">
-                            <div class="event-info">
-                                <h3>♟️ Chess Tournament</h3>
-                                <p>Requires entry fee registration</p>
-                            </div>
-                            <button class="payment-btn small" onclick="initiatePayment('Chess Tournament Entry', 500)">Pay Entry Fee</button>
-                        </div>
-                        <div class="event-item">
-                            <div class="event-info">
-                                <h3>🐕 Mega Dog Show</h3>
-                                <p>Free general entry / Viewer access</p>
-                            </div>
-                            <span class="status-badge free">Free Entry</span>
-                        </div>
-                        <div class="event-item">
-                            <div class="event-info">
-                                <h3>🎨 Drawing Competition</h3>
-                                <p>Requires entry fee registration</p>
-                            </div>
-                            <button class="payment-btn small" onclick="initiatePayment('Drawing Competition Entry', 300)">Pay Entry Fee</button>
-                        </div>
-                        <div class="event-item">
-                            <div class="event-info">
-                                <h3>👗 Grand Fashion Show & Live Concerts</h3>
-                                <p>Free general public admission</p>
-                            </div>
-                            <span class="status-badge free">Free Admission</span>
-                        </div>
-                        <div class="event-item">
-                            <div class="event-info">
-                                <h3>🎠 Amusement Rides (Camel, Horse, Bikes)</h3>
-                                <p>Pay per ride tickets</p>
-                            </div>
-                            <button class="payment-btn small" onclick="initiatePayment('Amusement Ride Tokens', 100)">Purchase Tokens</button>
-                        </div>
-                        <div class="event-item">
-                            <div class="event-info">
-                                <h3>💃 Zumba Fitness & Dance Programs</h3>
-                                <p>Open participation</p>
-                            </div>
-                            <span class="status-badge free">Open</span>
-                        </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <img src="assets/event-1.png" alt="Mega Dog Show" style="width:100%; border-radius:15px; margin-bottom:20px;">
+                        <h3 style="color:#fff; margin-bottom:10px;">Mega Dog Show</h3>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Witness an incredible display of agility...</p>
+                        <a class="payment-btn" href="event-mega-dog-show.html" style="text-decoration:none; display:block;">Register Now</a>
                     </div>
-                    <div class="events-flyer">
-                        <img src="assets/events_main.png" alt="Events Flyer" class="event-img">
+                    <div class="pricing-card">
+                        <img src="assets/event-2.png" alt="Horse Ride" style="width:100%; border-radius:15px; margin-bottom:20px;">
+                        <h3 style="color:#fff; margin-bottom:10px;">Horse Ride</h3>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Experience the thrill of a horse ride. P...</p>
+                        <a class="payment-btn" href="event-horse-ride.html" style="text-decoration:none; display:block;">Register Now</a>
+                    </div>
+                    <div class="pricing-card">
+                        <img src="assets/event-3.png" alt="Camel Ride" style="width:100%; border-radius:15px; margin-bottom:20px;">
+                        <h3 style="color:#fff; margin-bottom:10px;">Camel Ride</h3>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Enjoy a unique desert adventure right he...</p>
+                        <a class="payment-btn" href="event-camel-ride.html" style="text-decoration:none; display:block;">Register Now</a>
+                    </div>
+                    <div class="pricing-card">
+                        <img src="assets/event-4.png" alt="Kids Cycle Ride" style="width:100%; border-radius:15px; margin-bottom:20px;">
+                        <h3 style="color:#fff; margin-bottom:10px;">Kids Cycle Ride</h3>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Safe and exciting cycling track just for...</p>
+                        <a class="payment-btn" href="event-kids-cycle-ride.html" style="text-decoration:none; display:block;">Register Now</a>
+                    </div>
+                    <div class="pricing-card">
+                        <img src="assets/event-5.png" alt="Kids Bike Ride" style="width:100%; border-radius:15px; margin-bottom:20px;">
+                        <h3 style="color:#fff; margin-bottom:10px;">Kids Bike Ride</h3>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Little riders, big adventures! A mini bi...</p>
+                        <a class="payment-btn" href="event-kids-bike-ride.html" style="text-decoration:none; display:block;">Register Now</a>
+                    </div>
+                    <div class="pricing-card">
+                        <img src="assets/event-6.png" alt="Chess Tournament" style="width:100%; border-radius:15px; margin-bottom:20px;">
+                        <h3 style="color:#fff; margin-bottom:10px;">Chess Tournament</h3>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Think. Plan. Win. The ultimate battle of...</p>
+                        <a class="payment-btn" href="event-chess-tournament.html" style="text-decoration:none; display:block;">Register Now</a>
+                    </div>
+                    <div class="pricing-card">
+                        <img src="assets/event-7.png" alt="Drawing Competition" style="width:100%; border-radius:15px; margin-bottom:20px;">
+                        <h3 style="color:#fff; margin-bottom:10px;">Drawing Competition</h3>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Let your imagination take colours! Draw ...</p>
+                        <a class="payment-btn" href="event-drawing-competition.html" style="text-decoration:none; display:block;">Register Now</a>
+                    </div>
+                    <div class="pricing-card">
+                        <img src="assets/event-8.png" alt="Zumba Fitness" style="width:100%; border-radius:15px; margin-bottom:20px;">
+                        <h3 style="color:#fff; margin-bottom:10px;">Zumba Fitness</h3>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Dance, sweat, smile, repeat! Join the pa...</p>
+                        <a class="payment-btn" href="event-zumba-fitness.html" style="text-decoration:none; display:block;">Register Now</a>
+                    </div>
+                    <div class="pricing-card">
+                        <img src="assets/event-9.png" alt="Grand Fashion Show" style="width:100%; border-radius:15px; margin-bottom:20px;">
+                        <h3 style="color:#fff; margin-bottom:10px;">Grand Fashion Show</h3>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Walk the ramp, own the moment. Experienc...</p>
+                        <a class="payment-btn" href="event-fashion-show.html" style="text-decoration:none; display:block;">Register Now</a>
+                    </div>
+                    <div class="pricing-card">
+                        <img src="assets/event-10.png" alt="Live Concert" style="width:100%; border-radius:15px; margin-bottom:20px;">
+                        <h3 style="color:#fff; margin-bottom:10px;">Live Concert</h3>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Feel the music, live the moment. An unfo...</p>
+                        <a class="payment-btn" href="event-live-concert.html" style="text-decoration:none; display:block;">Register Now</a>
+                    </div>
+                    <div class="pricing-card">
+                        <img src="assets/event-11.png" alt="Dance Program" style="width:100%; border-radius:15px; margin-bottom:20px;">
+                        <h3 style="color:#fff; margin-bottom:10px;">Dance Program</h3>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Move, express, inspire! Let's celebrate ...</p>
+                        <a class="payment-btn" href="event-dance-program.html" style="text-decoration:none; display:block;">Register Now</a>
+                    </div>
+                    <div class="pricing-card">
+                        <img src="assets/event-12.png" alt="DJ Night" style="width:100%; border-radius:15px; margin-bottom:20px;">
+                        <h3 style="color:#fff; margin-bottom:10px;">DJ Night</h3>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Drop the beat, feel the energy! Live mus...</p>
+                        <a class="payment-btn" href="event-dj.html" style="text-decoration:none; display:block;">Register Now</a>
                     </div>
                 </div>
             </div>
@@ -183,7 +215,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2026 Biz Expo Forum. All Rights Reserved.</p>
+                <p>&copy; 2026 Biz Expo. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -198,7 +230,17 @@
                 <p id="modal-item-name" class="modal-item">Item Name</p>
                 <h2 id="modal-amount" class="modal-price">₹0</h2>
                 
-                <div class="card-details">
+                
+                    <div style="margin-bottom: 15px;">
+                        <input type="text" id="reg-name" placeholder="Full Name" class="mock-input" required style="margin-bottom: 10px;">
+                        <input type="email" id="reg-email" placeholder="Email Address" class="mock-input" required style="margin-bottom: 10px;">
+                        <input type="tel" id="reg-phone" placeholder="Phone Number" class="mock-input" required style="margin-bottom: 10px;">
+                        <textarea id="reg-address" placeholder="Address" class="mock-input" required style="margin-bottom: 10px; resize: vertical; min-height: 60px;"></textarea>
+                          <input type="text" id="reg-company" placeholder="Company Name (Required for Stalls)" class="mock-input stall-only" style="display: none; margin-bottom: 10px;">
+                          <textarea id="reg-company-desc" placeholder="Company Description / Products (Required for Stalls)" class="mock-input stall-only" style="display: none; margin-bottom: 10px; resize: vertical; min-height: 60px;"></textarea>
+
+                    </div>
+                    <div class="card-details">
                     <input type="text" placeholder="Card Number (Mock)" class="mock-input" disabled value="**** **** **** 4242">
                     <div class="card-extra">
                         <input type="text" placeholder="MM/YY" class="mock-input" disabled value="12/26">
@@ -217,6 +259,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

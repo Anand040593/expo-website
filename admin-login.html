@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Biz Expo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=5">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .login-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+        .login-card h2 {
+            margin-top: 0;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+        .login-card input {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 15px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            color: #fff;
+            border-radius: 10px;
+            font-family: inherit;
+        }
+        .login-card input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        .error-msg {
+            color: #ef4444;
+            margin-bottom: 20px;
+            display: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin-bottom: 30px; text-align: center;">
+        <img src="assets/logo.png" alt="Biz Expo" style="width: 80px; margin-bottom: 15px;">
+        <h1 style="margin: 0; font-size: 2rem; color: #fff;">Biz Expo</h1>
+    </div>
+    <div class="login-card">
+        <h2>Admin Login</h2>
+        <div id="error-msg" class="error-msg">Invalid credentials.</div>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button class="primary-btn" onclick="attemptLogin()" style="width: 100%;">Sign In</button>
+        <p style="margin-top: 20px; color: var(--text-muted); font-size: 0.9rem;"><a href="index.html" style="color: var(--primary); text-decoration: none;">&larr; Back to Website</a></p>
+    </div>
+
+    <script>
+        async function attemptLogin() {
+            const u = document.getElementById('username').value;
+            const p = document.getElementById('password').value;
+            const err = document.getElementById('error-msg');
+            
+            if(!u || !p) {
+                err.textContent = "Please enter both fields.";
+                err.style.display = "block";
+                return;
+            }
+            
+            try {
+                const res = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({username: u, password: p})
+                });
+                
+                if (res.ok) {
+                    window.location.href = "admin.html";
+                } else {
+                    err.textContent = "Invalid username or password.";
+                    err.style.display = "block";
+                }
+            } catch(e) {
+                err.textContent = "Connection failed.";
+                err.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

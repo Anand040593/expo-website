@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horse Ride - Biz Expo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <style>
+        .event-hero {
+            padding: 120px 20px 60px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .event-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .event-hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+        .event-img-large {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            border: 1px solid var(--glass-highlight);
+            margin-bottom: 40px;
+        }
+        .fee-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.05);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent);
+            border: 1px solid var(--glass-border);
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header class="glass-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
+                    <img src="assets/logo.png" alt="Biz Expo Logo" class="logo">
+                    <div class="header-text">
+                        <h1 style="color: white; -webkit-text-fill-color: white;">Biz Expo</h1>
+                        <p class="subtitle">Shopping and Business</p>
+                    </div>
+                </a>
+            </div>
+                        <div class="header-right" style="text-align: right; display: flex; flex-direction: column; gap: 5px;">
+                <div class="event-location" style="font-weight: 600; font-size: 1.1rem; color: #fff;">
+                    <span style="color: var(--primary);">📍</span> Sree Varalakshmi Mahal, Salem
+                </div>
+                <div class="event-date" style="font-size: 1rem; color: var(--text-muted);">
+                    <span>📅</span> September 18, 19, 20, 2026
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="event-hero">
+            <img src="assets/event-2.png" alt="Horse Ride" class="event-img-large fade-up">
+            <h1 class="fade-up">Horse Ride</h1>
+            <p class="fade-up">Experience the thrill of a horse ride. Perfect fun for kids and family!</p>
+            <div class="fee-badge fade-up">Ticket Price: ₹150</div>
+            <br>
+            <button class="primary-btn fade-up" onclick="initiatePayment('Horse Ride', 150)">Book Tickets</button>
+            <div style="margin-top: 20px;">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none;">&larr; Back to all events</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Payment -->
+    <div id="payment-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Secure Payment</h3>
+                <button class="close-modal" onclick="closePaymentModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                
+                    <div style="margin-bottom: 15px;">
+                        <input type="text" id="reg-name" placeholder="Full Name" class="mock-input" required style="margin-bottom: 10px;">
+                        <input type="email" id="reg-email" placeholder="Email Address" class="mock-input" required style="margin-bottom: 10px;">
+                        <input type="tel" id="reg-phone" placeholder="Phone Number" class="mock-input" required style="margin-bottom: 10px;">
+                        <textarea id="reg-address" placeholder="Address" class="mock-input" required style="margin-bottom: 10px; resize: vertical; min-height: 60px;"></textarea>
+                          <input type="text" id="reg-company" placeholder="Company Name (Required for Stalls)" class="mock-input stall-only" style="display: none; margin-bottom: 10px;">
+                          <textarea id="reg-company-desc" placeholder="Company Description / Products (Required for Stalls)" class="mock-input stall-only" style="display: none; margin-bottom: 10px; resize: vertical; min-height: 60px;"></textarea>
+
+                    </div>
+                    <div class="card-details">
+                    <h4 id="modal-item-name" class="modal-item">Package Name</h4>
+                    <div id="modal-amount" class="modal-price">₹0</div>
+                    <input type="text" placeholder="Cardholder Name" class="mock-input" value="Test User">
+                    <input type="text" placeholder="Card Number (Dummy)" class="mock-input" value="4111 1111 1111 1111">
+                    <div class="card-extra">
+                        <input type="text" placeholder="MM/YY" class="mock-input" value="12/28">
+                        <input type="text" placeholder="CVV" class="mock-input" value="123">
+                    </div>
+                </div>
+                <button class="pay-confirm-btn" onclick="processMockPayment()">Pay Now</button>
+            </div>
+            <div id="payment-success" class="payment-success-msg hidden">
+                <div class="success-icon">✓</div>
+                <h3>Payment Successful!</h3>
+                <p>Your booking has been confirmed.</p>
+                <button class="pay-confirm-btn" onclick="closePaymentModal()" style="margin-top: 20px;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=4"></script>
+</body>
+</html>
