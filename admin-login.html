@@ -80,7 +80,7 @@
             }
             
             try {
-                const res = await fetch('/api/login', {
+                const res = await fetch('api/login.php', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({username: u, password: p})

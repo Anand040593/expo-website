@@ -113,7 +113,7 @@ async function processMockPayment() {
     };
     
     try {
-        const response = await fetch('/api/register', {
+        const response = await fetch('api/register.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
